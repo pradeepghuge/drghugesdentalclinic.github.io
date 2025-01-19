@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Dr. Ghuge's Dental Clinic and Implant Center</title>
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="images/favicon.png"> <!-- Replace with your actual favicon path -->
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
+    <style>
+        /* Global Styles */
+        body {
+            font-family: 'Roboto', sans-serif; /* Modern, clean font */
+            margin: 0;
+            padding: 0;
+            background-color: #f8f8f8;
+            color: #333;
+            overflow-x: hidden; /* Prevent horizontal scroll */
+        }
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        /* Header Styles */
+        header {
+            background: #0078d4; /* Professional blue */
+            color: #fff;
+            text-align: center;
+            padding: 80px 20px; /* More padding */
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            position: relative;
+            overflow: hidden; /* For animated elements */
+        }
+        header:before {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 150px; /* Taller wave */
+            background: linear-gradient(to top, #f8f8f8, transparent);
+            z-index: 1;
+        }
+        header:after { /* Animated subtle pattern */
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 200%;
+            height: 100%;
+            background: url('images/subtle-pattern.png'); /* Replace with a subtle, professional pattern */
+            opacity: 0.2;
+            z-index: 0;
+            animation: animatePattern 30s linear infinite;
+        }
+        @keyframes animatePattern {
+            from {
+                transform: translateX(0);
+            }
+            to {
+                transform: translateX(-50%);
+            }
+        }
+        header h1 {
+            font-size: 4em; /* Larger title */
+            margin: 0;
+            font-weight: 700; /* Bold */
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+            z-index: 2;
+            position: relative;
+        }
+        header p {
+            font-size: 1.4em; /* Larger subtitle */
+            margin: 15px 0;
+            font-weight: 400;
+            z-index: 2;
+            position: relative;
+        }
+        header .logo-icon { /* Assuming you might have a separate logo */
+            font-size: 3em;
+            margin-bottom: 10px;
+            color: #fff;
+            z-index: 2;
+            position: relative;
+        }
+
+        /* Navigation Bar */
+        nav {
+            background-color: #fff;
+            padding: 20px 0; /* More padding */
+            text-align: center;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        nav a {
+            color: #555; /* Darker gray */
+            padding: 15px 25px; /* More padding */
+            margin: 0 15px; /* More margin */
+            font-size: 1.2em; /* Larger font */
+            transition: background-color 0.3s ease, color 0.3s ease;
+            border-radius: 25px;
+            font-weight: 500; /* Semibold */
+        }
+        nav a:hover {
+            background-color: #e0e0e0; /* Light gray on hover */
+            color: #333;
+        }
+        nav a i {
+            margin-right: 8px; /* Space between icon and text */
+        }
+
+        /* Main Content Section */
+        .container {
+            width: 80%; /* Slightly narrower */
+            margin: 50px auto; /* More margin */
+            padding: 30px; /* More padding */
+            background-color: #fff;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 15px; /* More rounded corners */
+        }
+
+        /* Section Styles */
+        section {
+            margin-bottom: 80px; /* More space between sections */
+        }
+        section h2 {
+            font-size: 3em; /* Larger heading */
+            text-align: center;
+            margin-bottom: 40px;
+            color: #0078d4; /* Professional blue */
+            position: relative;
+        }
+        section h2:after {
+            content: '';
+            position: absolute;
+            bottom: -15px; /* Further down */
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px; /* Wider underline */
+            height: 4px; /* Thicker underline */
+            background-color: #0078d4;
+            border-radius: 2px; /* Slightly rounded */
+        }
+        section p {
+            font-size: 1.3em; /* Larger font */
+            line-height: 1.8; /* More line height */
+            text-align: center;
+            color: #444; /* Slightly darker text */
+            margin-bottom: 30px; /* More margin */
+        }
+
+        /* Service Section */
+        .services ul {
+            list-style-type: none;
+            padding: 0;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Responsive and wider */
+            gap: 40px; /* More gap */
+            text-align: center;
+        }
+        .services li {
+            background-color: #f8f8f8; /* Light gray background */
+            padding: 40px 30px; /* More padding */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 15px;
+            transition: transform 0.4s ease, box-shadow 0.4s ease;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .services li:hover {
+            transform: translateY(-15px); /* More lift */
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+        .services li i {
+            font-size: 3em; /* Larger icon */
+            color: #0078d4;
+            margin-bottom: 20px;
+            transition: color 0.4s ease; /* Transition for icon color */
+        }
+        .services li:hover i {
+            color: #005a9e; /* Darker blue on hover */
+        }
+        .services li h3 {
+            font-size: 1.8em; /* Larger heading */
+            margin-bottom: 15px;
+            color: #555;
+        }
+
+        /* Review Section */
+        .reviews {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 50px; /* More gap */
+        }
+        .review-item {
+            background-color: #f8f8f8;
+            padding: 30px 40px; /* More padding */
+            width: 65%; /* Narrower */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 15px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .review-item:hover {
+            transform: translateY(-10px); /* Lift on hover */
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+        }
+        .review-item p:first-of-type {
+            font-weight: 600;
+            color: #0078d4;
+            font-size: 1.4em; /* Larger name */
+            margin-bottom: 5px; /* Less space */
+        }
+        .rating {
+            color: #f4b400;
+            font-size: 1.3em; /* Larger stars */
+            margin-top: 15px; /* More space */
+        }
+
+        /* Contact Section */
+        .contact {
+            background: #0078d4; /* Professional blue */
+            color: #fff;
+            padding: 60px 30px;
+            text-align: center;
+            border-radius: 15px;
+            position: relative;
+            overflow: hidden; /* For pattern */
+        }
+        .contact:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('images/subtle-pattern.png'); /* Same pattern as header */
+            opacity: 0.2;
+            z-index: 0;
+        }
+        .contact h2 {
+            font-size: 3.2em; /* Larger heading */
+            margin-bottom: 25px;
+            color: #fff;
+            z-index: 1;
+            position: relative;
+        }
+        .contact h2:after {
+            display: none; /* No underline */
+        }
+        .contact p {
+            font-size: 1.4em; /* Larger text */
+            margin-bottom: 40px; /* More space */
+            color: #f5f5f5; /* Lighter text */
+            z-index: 1;
+            position: relative;
+        }
+        .contact a {
+            background-color: #fff;
+            color: #0078d4;
+            padding: 18px 40px; /* Larger button */
+            font-size: 1.3em; /* Larger font */
+            border-radius: 30px; /* More rounded */
+            transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            font-weight: 600; /* Semibold */
+            z-index: 1;
+            position: relative;
+        }
+        .contact a:hover {
+            background-color: #e0e0e0;
+            color: #333;
+            transform: scale(1.05); /* Slightly enlarge on hover */
+        }
+
+        /* Footer */
+        footer {
+            background-color: #333;
+            color: #fff;
+            padding: 40px 20px;
+            text-align: center;
+            position: relative;
+        }
+        footer p {
+            font-size: 1.1em; /* Larger font */
+            margin-bottom: 20px;
+        }
+        .footer-bottom {
+            font-size: 1em;
+        }
+
+        /* Google Map Styling */
+        #google-map {
+            width: 100%;
+            height: 450px; /* Taller map */
+            border-radius: 15px;
+            margin-top: 40px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <i class="fas fa-tooth logo-icon"></i> <!-- You can replace this with an actual logo image -->
+        <h1>Dr. Ghuge's Dental Clinic & Implant Center</h1>
+        <p>Elevating Smiles, Redefining Dental Excellence</p>
+    </header>
+
+    <!-- Navigation -->
+    <nav>
+        <a href="#overview"><i class="fas fa-clinic-medical"></i> Overview</a>
+        <a href="#services"><i class="fas fa-hand-holding-medical"></i> Services</a>
+        <a href="#reviews"><i class="fas fa-star-half-alt"></i> Reviews</a>
+        <a href="#contact"><i class="fas fa-envelope-open"></i> Contact</a>
+    </nav>
+
+    <div class="container">
+        <!-- Overview Section -->
+        <section id="overview">
+            <h2><i class="fas fa-info-circle"></i> Clinic Overview</h2>
+            <p>At Dr. Ghuge's Dental Clinic & Implant Center, we transcend traditional dentistry by creating an atmosphere of refined care and unparalleled expertise. Our esteemed clinic is dedicated to providing bespoke dental solutions, meticulously tailored to meet the unique needs and desires of each discerning patient. Experience a sanctuary of oral health where advanced technology meets artistry and precision.</p>
+            <p><i class="fas fa-map-marker-alt"></i> <strong>Location:</strong> Shop No. 14, A-Wing, Om Sai Market, 411019, Chikhali Akurdi Rd, Krishna Nagar, Sector No. 20, Pimpri-Chinchwad, Maharashtra</p>
+            <p><i class="fas fa-phone"></i> <strong>Contact:</strong> <a href="tel:+919960309718">+91 99603 09718</a></p>
+            <p><i class="fas fa-clock"></i> <strong>Business Hours:</strong> Monday - Saturday: 9:30 AM - 7:00 PM</p>
+            <!-- Google Maps Embed -->
+            <div id="google-map">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d120907.97036632257!2d73.7967995!3d18.6681189!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sin!4v1678384822588!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+            </div>
+        </section>
+
+        <!-- Services Section -->
+        <section id="services" class="services">
+            <h2><i class="fas fa-user-md"></i> Our Signature Services</h2>
+            <ul>
+                <li>
+                    <i class="fas fa-tooth"></i>
+                    <h3>General Dentistry</h3>
+                    <p>Experience comprehensive dental examinations, meticulous cleanings, precision fillings, and proactive preventive care, ensuring enduring oral health and well-being.</p>
+                </li>
+                <li>
+                    <i class="fas fa-syringe"></i>
+                    <h3>Root Canal Treatment</h3>
+                    <p>Our specialized root canal therapies are performed with utmost precision, alleviating pain and preserving your natural teeth with artistic finesse.</p>
+                </li>
+                <li>
+                    <i class="fas fa-plus-square"></i>
+                    <h3>Dental Implants</h3>
+                    <p>Discover state-of-the-art dental implant solutions that seamlessly replace missing teeth, restoring both functionality and aesthetic harmony to your smile.</p>
+                </li>
+                <li>
+                    <i class="fas fa-star-of-life"></i>
+                    <h3>Cosmetic Dentistry</h3>
+                    <p>Transform your smile with our bespoke cosmetic treatments, including teeth whitening, porcelain veneers, and smile makeovers, tailored to your unique aspirations.</p>
+                </li>
+                <li>
+                    <i class="fas fa-user-md"></i>
+                    <h3>Orthodontics</h3>
+                    <p>Achieve a perfectly aligned smile and improved bite with our advanced orthodontic solutions, including discreet clear aligners and traditional braces.</p>
+                </li>
+            </ul>
+        </section>
+
+        <!-- Reviews Section -->
+        <section id="reviews">
+            <h2><i class="fas fa-comment-dots"></i>  Testimonials</h2>
+            <div class="reviews">
+                <div class="review-item">
+                    <p>Pravin Pawar (5 days ago)</p>
+                    <p>"Dr. Ghuge is an exceptional dentist who truly cares about his patients. From the moment I walked in, I felt at ease. His expertise and professionalism are top-notch."</p>
+                    <p class="rating">★★★★★</p>
+                </div>
+                <div class="review-item">
+                    <p>Kishor Kokate (2 months ago)</p>
+                    <p>"I underwent a root canal treatment here. The experience was pleasant, and the team was professional and caring throughout the process."</p>
+                    <p class="rating">★★★★★</p>
+                </div>
+                <div class="review-item">
+                    <p>Pramod Rewade (5 months ago)</p>
+                    <p>"Excellent care with great attention to detail. Dr. Pradeep is highly skilled and patient, and the team made sure I was comfortable throughout my treatment."</p>
+                    <p class="rating">★★★★★</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="contact">
+            <h2><i class="fas fa-envelope-open-text"></i> Connect With Us</h2>
+            <p>Embark on your journey to a radiant, healthy smile. Contact us today to schedule your consultation or inquire about our exclusive services.</p>
+            <a href="tel:+919960309718"><i class="fas fa-phone-volume"></i> Contact Us Now</a>
+        </section>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-bottom">
+            <p>© 2025 Dr. Ghuge's Dental Clinic and Implant Center | All Rights Reserved</p>
+        </div>
+    </footer>
+
+</body>
+</html>
