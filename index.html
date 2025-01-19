@@ -87,41 +87,6 @@
             color: #eee;
         }
 
-        /* Navigation Bar */
-        nav {
-            background-color: #fff;
-            padding: 15px 0;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-        }
-
-        nav .container {
-            display: flex;
-            justify-content: center;
-        }
-
-        nav a {
-            color: #495057;
-            padding: 12px 20px;
-            margin: 0 10px;
-            font-size: 1.1em;
-            font-weight: 500;
-            border-radius: 5px;
-            transition: background-color 0.3s ease, color 0.3s ease;
-        }
-
-        nav a:hover,
-        nav a.active {
-            background-color: #e9ecef;
-            color: #007bff;
-        }
-
-        nav a i {
-            margin-right: 8px;
-        }
-
         /* Section Styles */
         section {
             padding: 80px 0;
@@ -431,16 +396,6 @@
         }
 
         @media (max-width: 768px) {
-            nav .container {
-                flex-direction: column;
-                align-items: center;
-            }
-
-            nav a {
-                margin: 5px 0;
-                padding: 10px 15px;
-            }
-
             .services-grid {
                 grid-template-columns: 1fr;
             }
@@ -479,17 +434,6 @@
             <p>Elevating Smiles, Redefining Dental Excellence in Pimpri-Chinchwad</p>
         </div>
     </header>
-
-    <!-- Navigation -->
-    <nav>
-        <div class="container">
-            <a href="#overview"><i class="fas fa-clinic-medical"></i> Overview</a>
-            <a href="#about"><i class="fas fa-info-circle"></i> About Us</a>
-            <a href="#services"><i class="fas fa-hand-holding-medical"></i> Services</a>
-            <a href="#reviews"><i class="fas fa-star-half-alt"></i> Reviews</a>
-            <a href="#contact"><i class="fas fa-envelope-open"></i> Contact</a>
-        </div>
-    </nav>
 
     <!-- Overview Section -->
     <section id="overview">
@@ -644,32 +588,7 @@
     </footer>
 
     <script>
-        // Basic script to highlight the active navigation link
-        document.addEventListener('DOMContentLoaded', function() {
-            const navLinks = document.querySelectorAll('nav a');
-            const sections = document.querySelectorAll('section');
-
-            function highlightNavigation() {
-                let scrollY = window.scrollY;
-
-                sections.forEach(current => {
-                    const sectionHeight = current.offsetHeight;
-                    const sectionTop = current.offsetTop - 50; // Offset to trigger earlier
-                    const sectionId = current.getAttribute('id');
-
-                    if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
-                        navLinks.forEach(link => {
-                            link.classList.remove('active');
-                            if (link.getAttribute('href') === `#${sectionId}`) {
-                                link.classList.add('active');
-                            }
-                        });
-                    }
-                });
-            }
-
-            window.addEventListener('scroll', highlightNavigation);
-        });
+        // The navigation highlighting script is no longer needed as there is no navigation
     </script>
 
 </body>
